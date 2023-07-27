@@ -769,3 +769,158 @@ To https://github.com/AristideI/Final-Git-Practice.git
 
 
 ```
+
+** Bundle 5 Full
+
+```
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git remote add Git-Copy-1 https://github.com/AristideI/Git-Copy-1.git
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ vi files
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ add
+warning: in the working copy of 'files', LF will be replaced by CRLF the next time Git touches it
+[main 715c0f6] Latest Update
+ 1 file changed, 1 insertion(+)
+ create mode 100644 files
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 279 bytes | 279.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/AristideI/Final-Git-Practice.git
+   785a289..715c0f6  main -> main
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git push Git-Copy-1
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (41/41), 8.67 KiB | 1.24 MiB/s, done.
+Total 41 (delta 19), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (19/19), done.
+To https://github.com/AristideI/Git-Copy-1.git
+ * [new branch]      main -> main
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ vi footer.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ git add .
+warning: in the working copy of 'footer.html', LF will be replaced by CRLF the next time Git touches it
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ git commit -m "fotoer"
+[ft/footer 8049753] fotoer
+ 1 file changed, 1 insertion(+)
+ create mode 100644 footer.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ vi footer2.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ git add .
+warning: in the working copy of 'footer2.html', LF will be replaced by CRLF the next time Git touches it
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ git commit -m "footer2"
+[ft/footer 4429573] footer2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 footer2.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git merge squash ft/footer
+merge: squash - not something we can merge
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git merge --squash ft/footer
+Updating 715c0f6..4429573
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html  | 1 +
+ footer2.html | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 footer.html
+ create mode 100644 footer2.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git add .
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git commit -m "squash"
+[ft/squashing 7965524] squash
+ 2 files changed, 2 insertions(+)
+ create mode 100644 footer.html
+ create mode 100644 footer2.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git push origin ft/s
+ft/service-redesign   ft/squashing
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git push origin ft/squashing
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 329 bytes | 329.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/AristideI/Final-Git-Practice/pull/new/ft/squashing
+remote:
+To https://github.com/AristideI/Final-Git-Practice.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$ git push Git-Copy-1  ft/squashing
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 329 bytes | 329.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/AristideI/Git-Copy-1/pull/new/ft/squashing
+remote:
+To https://github.com/AristideI/Git-Copy-1.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/squashing)
+$
+
+
+```
