@@ -634,3 +634,138 @@ $
 
 
 ```
+
+** Bundle 3 exercise 2
+
+
+```
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/faq-page)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+* ft/faq-page
+  ft/service-redesign
+  ft/team-page
+  main
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/faq-page)
+$ git checkout ft/home-page-redesign
+error: pathspec 'ft/home-page-redesign' did not match any file(s) known to git
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ ls
+2  README.md  file  file2  fileone.html  services.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ vi filee.html
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ add
+warning: in the working copy of 'filee.html', LF will be replaced by CRLF the next time Git touches it
+[main 2cc8005] Latest Update
+ 1 file changed, 9 insertions(+)
+ create mode 100644 filee.html
+To https://github.com/AristideI/Final-Git-Practice.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/AristideI/Final-Git-Practice.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 3.58 KiB | 458.00 KiB/s, done.
+From https://github.com/AristideI/Final-Git-Practice
+   8f9760a..6e36639  main       -> origin/main
+Merge made by the 'ort' strategy.
+ README.md | 406 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 405 insertions(+), 1 deletion(-)
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ add
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 744 bytes | 744.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/AristideI/Final-Git-Practice.git
+   6e36639..7ab0f18  main -> main
+
+walte@Walter MINGW64 /d/Final-Git-Practice (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/home-page-redesign)
+$ git rebase main
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 350f2d5... sdf
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 350f2d5... sdf
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/home-page-redesign|REBASE 2/7)
+$ vi README.md
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/home-page-redesign|REBASE 2/7)
+$ add
+[detached HEAD 2632c8c] Latest Update
+ 1 file changed, 1 insertion(+)
+fatal: You are not currently on a branch.
+To push the history leading to the current (detached HEAD)
+state now, use
+
+    git push origin HEAD:<name-of-remote-branch>
+
+
+walte@Walter MINGW64 /d/Final-Git-Practice (ft/home-page-redesign|REBASE 2/7)
+$ git push origin ft/home-page-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 325 bytes | 40.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/AristideI/Final-Git-Practice/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/AristideI/Final-Git-Practice.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+
+
+```
